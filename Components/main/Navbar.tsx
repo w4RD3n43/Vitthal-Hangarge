@@ -3,7 +3,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='w-full h-[65px] fixed top-0 shadow-lg shadow-[#2a0e61]/30  bg-[#030001417] backdrop-blur-md z-50 '>
+    <div className='w-full h-[65px] fixed top-0 shadow-[#2a0e61]/30  bg-[#03001417] backdrop-blur-md z-50 '>
       <div className='w-full h-full flex items-center justify-between m-auto pz-[10px]'>
         <a href='#about-me' className='h-auto w-auto flex items-center' >
           <img 
