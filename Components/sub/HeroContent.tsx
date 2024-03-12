@@ -16,7 +16,7 @@ const Herocontent = () => {
         className='welcome-box py-[8px] px-[8px] opacity-[0.9] border border-[#7042f88b] md:mt-0 '
         >
           <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5 ' />
-          <h1 className='welcome-text text-[px]'>
+          <h1 className='welcome-text text-[px] '>
             Web Developer portfolio
           </h1>
         </motion.div>
@@ -45,6 +45,7 @@ const Herocontent = () => {
         className='w-full h-full flex justify-center items-center'
         >
           <img
+          loading='lazy'
           src = "/mainIconsdark.svg"
           alt='work icons'
           height={650}

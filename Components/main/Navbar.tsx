@@ -1,57 +1,54 @@
-import { Socials } from '@/constants'
-import React from 'react'
+"use client";
+import Link from 'next/link'
+import React,{useState} from 'react'
+import { MdOutlineCancel } from "react-icons/md";
+import { IoIosMenu } from "react-icons/io";
 
-const Navbar = () => {
-  return (
-    <div className='w-full h-[65px] fixed top-0 shadow-[#2a0e61]/30  bg-[#03001417] backdrop-blur-md z-50 '>
-      <div className='w-full h-full flex items-center justify-between m-auto pz-[10px]'>
-        <a href='#about-me' className='h-auto w-auto flex items-center' >
-          <img 
-          src='/Navlogo.svg'
-          alt='logo'
-          width={40}
-          height={40}
-          className='ml-5 cursor-pointer hover:animate-slowspin'
-          />
-        </a>
-        <div className=' md:w-[500px] h-full flex justify-between items-center mx-2'>
-          <div className='flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e]  px-[20px] py-[10px] rounded-full text-gray-200'>
-            <a href='#about-me' className=' cursor-pointer ml-1' >
-              Me
-            </a>
-            <div className='bg-black w-[0.2px] h-5 mx-2 md:hidden'>
+
+function NavBar() {
+
+    const[navbarOpen,setNavbarOpen] = useState(false);
+    return (
+    <nav className='fixed top-0 left-0 right-0  md:bg-[#03001417] bg-opacity-100 z-[50]'>
+        
+        <div className='flex flex-wrap items-center justify-between mx-auto px-4 py-2'>
+            <Link href={"/"} className=' text-2xl md:text-5xl text-white font-semibold'>
+                <img src='/Navlogo.svg' width={40} height={40}/>
+            </Link>
+            <div className='mobile-menu block md:hidden bg-[#030014c0] rounded-full'>
+                {
+                    navbarOpen ? (<button onClick={() => {setNavbarOpen(!navbarOpen)}} className='flex items-center px-3  py-2 rounded  text-slate-200 hover:text-white '>
+                                    <MdOutlineCancel className="h-5 w-5 " />
+                                </button>) 
+                    : (<button onClick={() => {setNavbarOpen(!navbarOpen)}} className='flex items-center px-3 py-2  rounded text-slate-200 hover:text-white '>
+                    <IoIosMenu className="h-5 w-5 "/>
+                </button>)
+                }
             </div>
-            <a href='#skills' className=' cursor-pointer ml-1' >
-              skills
-            </a>
-            <div className='bg-black w-[0.2px] h-5 mx-2 md:hidden'>
+
+            <div className='menu hidden md:block md:w-auto' id='navbar'>
+                <ul className='flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0'>
+                    <li><Link href={"#home"} className='block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white hover:scale-125 transition-all'>Home</Link></li>
+                    <li><Link href={"#skills"} className='block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white hover:scale-125 transition-all'>Skills</Link></li>
+                    <li><Link href={"#projects"} className='block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white hover:scale-125 transition-all'>Projects</Link></li>
+                    <li><Link href={"#contact-me"} className='block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white hover:scale-125 transition-all'>Contact</Link></li>
+                </ul>
             </div>
-            <a href='#projects' className=' cursor-pointer ml-1' >
-              projects
-            </a>
-          </div>
         </div>
-        <div className='flex gap-2 md:gap-5 mr-5'>
-          {
-            Socials.map((social)=> {
-              return (
-                <a href={social.link} className=' cursor-pointer'>
-                  <img 
-                    src={social.src}
-                    alt={social.name}
-                    key={social.name}
-                    width={24}
-                    height={24}
-                  />
-                </a>
-                
-              )
-            } )
-          }
-        </div>
-      </div>
-    </div>
+        {
+            navbarOpen ? (
+            <ul className='flex flex-col py-4 items-center'>
+                <li className='flex justify-center w-full text-white bg-[#140835] ' onClick={() => {setNavbarOpen(!navbarOpen)}} ><Link href={"#home"}       className='block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0  '>Home</Link></li>
+                <li className='flex justify-center w-full text-white bg-[#140835] ' onClick={() => {setNavbarOpen(!navbarOpen)}} ><Link href={"#skills"}     className='block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0  '>Skills</Link></li>
+                <li className='flex justify-center w-full text-white bg-[#140835] ' onClick={() => {setNavbarOpen(!navbarOpen)}} ><Link href={"#projects"}   className='block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0  '>Projects</Link></li>
+                <li className='flex justify-center w-full text-white bg-[#140835] ' onClick={() => {setNavbarOpen(!navbarOpen)}} ><Link href={"#contact-me"} className='block py-2 pl-3 pr-4 sm:text-xl rounded md:p-0  '>Contact</Link></li>
+            </ul>
+            ) : (
+                null
+            )
+        }
+    </nav>
   )
 }
 
-export default Navbar
+export default NavBar

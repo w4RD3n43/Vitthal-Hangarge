@@ -14,6 +14,7 @@ export const ProjectCard = ({ src, title, description, gitUrl }: Props) => {
   return (
     <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61]">
       <Image
+        loading="lazy"
         src={src}
         alt={title}
         width={1000}
