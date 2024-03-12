@@ -8,15 +8,15 @@ const Herocontent = () => {
     <motion.div
     initial='hidden'
     animate='visible'
-    className='flex flex-col items-center justify-center px-12 mt-40 w-full z-[20] md:flex-row'
+    className='flex flex-col items-center justify-center px-12 mt-24 md:mt-40 w-full z-[20] md:flex-row'
     >
       <div className=' h-full w-full flex flex-col gap-5 justify-center m-auto text-start'>
         <motion.div
         variants={slideInFromTop}
         className='welcome-box py-[8px] px-[8px] opacity-[0.9] border border-[#7042f88b] md:mt-0 '
         >
-          <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5 ' />
-          <h1 className='welcome-text text-[px] '>
+          <SparklesIcon className='text-[#b49bff] mr-[10px] h-5 w-5' />
+          <h1 className=' welcome-text text-[px] '>
             Web Developer portfolio
           </h1>
         </motion.div>
