@@ -24,7 +24,7 @@ export const ProjectCard = ({ src, title, description, gitUrl }: Props) => {
       <div className="relative flex flex-col justify-center items-center p-4">
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
         <p className="mt-2 text-gray-300">{description}</p>
-        <a href={gitUrl} className="cursor-pointer z-[100]">
+        <a href={gitUrl} className="cursor-pointer  z-[100]">
             <img src="/gitwhite.png" alt="github" className="w-10 mt-5 "/>
         </a>
       </div>

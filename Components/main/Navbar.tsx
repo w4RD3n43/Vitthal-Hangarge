@@ -6,7 +6,7 @@ import { IoIosMenu } from "react-icons/io";
 
 
 function NavBar() {
-
+    
     const[navbarOpen,setNavbarOpen] = useState(false);
     return (
     <nav className='fixed top-0 left-0 right-0  md:bg-[#03001417] bg-opacity-100 z-[50]'>
